@@ -26,6 +26,7 @@ namespace SlovníFotbal
         public Uvod()
         {
             InitializeComponent();
+            txt_nadpis.Text = "Zahraj si\n slovní fotbálek";
         }
 
         private void btn_hra(object sender, RoutedEventArgs e)

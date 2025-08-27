@@ -26,7 +26,7 @@ namespace SlovníFotbal
             InitializeComponent();
 
             txt_minuleSlovo.Text = posledniSlovo;
-            lbl_kteryHrac.Content = "Hrac: " + kdo;
+            lbl_kteryHrac.Content = "Hráč: " + kdo;
             lbl_kteryHrac.Foreground = Brushes.Blue;
 
             countdownTimer = new DispatcherTimer
@@ -86,7 +86,7 @@ namespace SlovníFotbal
 
             // Kontrola odpovědi
             var vstup = txt_zadaneSlovo.Text ?? string.Empty;
-            if (string.IsNullOrWhiteSpace(vstup) || vstup.StartsWith("Zadej slovo.") || vstup.StartsWith("Hrac:"))
+            if (string.IsNullOrWhiteSpace(vstup) || vstup.StartsWith(" Zadej slovo ...") || vstup.StartsWith("Hrac:"))
             {
                 // Pokud chyba tak vyhodí okénko s upozorněním
                 MessageBox.Show("Zadej prosím platné slovo.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -127,7 +127,7 @@ namespace SlovníFotbal
             }
             else
             {
-                lbl_kteryHrac.Content = "Hrac: " + kdo;
+                lbl_kteryHrac.Content = "Hráč: " + kdo;
                 lbl_kteryHrac.Foreground = (kdo == 1) ? Brushes.Blue : Brushes.Red;
                 ResetCountdown();
             }
@@ -138,7 +138,7 @@ namespace SlovníFotbal
         {
             if (string.IsNullOrWhiteSpace(txt_zadaneSlovo.Text))
             {
-                txt_zadaneSlovo.Text = "Zadej slovo.";
+                txt_zadaneSlovo.Text = " Zadej slovo ...";
                 txt_zadaneSlovo.Foreground = Brushes.Gray;
             }
         }
@@ -146,7 +146,7 @@ namespace SlovníFotbal
         // Pomocná funkce pro TextBox
         private void TxtZadaneSlovo_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (txt_zadaneSlovo.Text == "Zadej slovo.")
+            if (txt_zadaneSlovo.Text == " Zadej slovo ...")
             {
                 txt_zadaneSlovo.Text = "";
                 txt_zadaneSlovo.Foreground = Brushes.Black;
@@ -177,7 +177,7 @@ namespace SlovníFotbal
             {
                 MessageBox.Show("Počítač nenašel odpověď.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
                 Globals.jePcNaRade = false;
-                lbl_kteryHrac.Content = "Hrac: " + kdo;
+                lbl_kteryHrac.Content = "Hráč: " + kdo;
                 lbl_kteryHrac.Foreground = (kdo == 1) ? Brushes.Blue : Brushes.Red;
                 ResetCountdown();
                 return;
@@ -188,7 +188,7 @@ namespace SlovníFotbal
             Globals.jePcNaRade = false;
 
             kdo = 1;
-            lbl_kteryHrac.Content = "Hrac: " + kdo;
+            lbl_kteryHrac.Content = "Hráč: " + kdo;
             lbl_kteryHrac.Foreground = Brushes.Blue;
 
             ResetCountdown();
