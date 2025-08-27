@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\tomas\\source\\repos\\Stopky\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1BD675A0-1128-4505-BB8E-F9F3E7F13A9C}|Stopky\\Stopky.csproj|c:\\users\\tomas\\source\\repos\\stopky\\stopky\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1BD675A0-1128-4505-BB8E-F9F3E7F13A9C}|Stopky\\Stopky.csproj|solutionrelative:stopky\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BD675A0-1128-4505-BB8E-F9F3E7F13A9C}|Stopky\\Stopky.csproj|c:\\users\\tomas\\source\\repos\\stopky\\stopky\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BD675A0-1128-4505-BB8E-F9F3E7F13A9C}|Stopky\\Stopky.csproj|solutionrelative:stopky\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\tomas\\source\\repos\\Stopky\\Stopky\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Stopky\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\tomas\\source\\repos\\Stopky\\Stopky\\MainWindow.xaml",
+              "RelativeToolTip": "Stopky\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-26T15:37:46.996Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\tomas\\source\\repos\\Stopky\\Stopky\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Stopky\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\tomas\\source\\repos\\Stopky\\Stopky\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Stopky\\MainWindow.xaml.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADsAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-26T15:32:30.265Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
