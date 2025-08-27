@@ -1,0 +1,178 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\tomas\\source\\repos\\WPF_TEST\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5835F1B4-61A0-4E45-9EF9-F6100718E229}|WPF_TEST\\WPF_TEST.csproj|c:\\users\\tomas\\source\\repos\\wpf_test\\wpf_test\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5835F1B4-61A0-4E45-9EF9-F6100718E229}|WPF_TEST\\WPF_TEST.csproj|solutionrelative:wpf_test\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5835F1B4-61A0-4E45-9EF9-F6100718E229}|WPF_TEST\\WPF_TEST.csproj|c:\\users\\tomas\\source\\repos\\wpf_test\\wpf_test\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5835F1B4-61A0-4E45-9EF9-F6100718E229}|WPF_TEST\\WPF_TEST.csproj|solutionrelative:wpf_test\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5835F1B4-61A0-4E45-9EF9-F6100718E229}|WPF_TEST\\WPF_TEST.csproj|c:\\users\\tomas\\source\\repos\\wpf_test\\wpf_test\\menu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5835F1B4-61A0-4E45-9EF9-F6100718E229}|WPF_TEST\\WPF_TEST.csproj|solutionrelative:wpf_test\\menu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5835F1B4-61A0-4E45-9EF9-F6100718E229}|WPF_TEST\\WPF_TEST.csproj|c:\\users\\tomas\\source\\repos\\wpf_test\\wpf_test\\menu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5835F1B4-61A0-4E45-9EF9-F6100718E229}|WPF_TEST\\WPF_TEST.csproj|solutionrelative:wpf_test\\menu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5835F1B4-61A0-4E45-9EF9-F6100718E229}|WPF_TEST\\WPF_TEST.csproj|c:\\users\\tomas\\source\\repos\\wpf_test\\wpf_test\\registrace.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5835F1B4-61A0-4E45-9EF9-F6100718E229}|WPF_TEST\\WPF_TEST.csproj|solutionrelative:wpf_test\\registrace.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5835F1B4-61A0-4E45-9EF9-F6100718E229}|WPF_TEST\\WPF_TEST.csproj|c:\\users\\tomas\\source\\repos\\wpf_test\\wpf_test\\registrace.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5835F1B4-61A0-4E45-9EF9-F6100718E229}|WPF_TEST\\WPF_TEST.csproj|solutionrelative:wpf_test\\registrace.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5835F1B4-61A0-4E45-9EF9-F6100718E229}|WPF_TEST\\WPF_TEST.csproj|c:\\users\\tomas\\source\\repos\\wpf_test\\wpf_test\\knihovna\\kniha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5835F1B4-61A0-4E45-9EF9-F6100718E229}|WPF_TEST\\WPF_TEST.csproj|solutionrelative:wpf_test\\knihovna\\kniha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5835F1B4-61A0-4E45-9EF9-F6100718E229}|WPF_TEST\\WPF_TEST.csproj|c:\\users\\tomas\\source\\repos\\wpf_test\\wpf_test\\knihovna\\vypisknih.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5835F1B4-61A0-4E45-9EF9-F6100718E229}|WPF_TEST\\WPF_TEST.csproj|solutionrelative:wpf_test\\knihovna\\vypisknih.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5835F1B4-61A0-4E45-9EF9-F6100718E229}|WPF_TEST\\WPF_TEST.csproj|c:\\users\\tomas\\source\\repos\\wpf_test\\wpf_test\\knihovna\\vypisknih.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5835F1B4-61A0-4E45-9EF9-F6100718E229}|WPF_TEST\\WPF_TEST.csproj|solutionrelative:wpf_test\\knihovna\\vypisknih.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5835F1B4-61A0-4E45-9EF9-F6100718E229}|WPF_TEST\\WPF_TEST.csproj|c:\\users\\tomas\\source\\repos\\wpf_test\\wpf_test\\databaze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5835F1B4-61A0-4E45-9EF9-F6100718E229}|WPF_TEST\\WPF_TEST.csproj|solutionrelative:wpf_test\\databaze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\tomas\\source\\repos\\WPF_TEST\\WPF_TEST\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "WPF_TEST\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\tomas\\source\\repos\\WPF_TEST\\WPF_TEST\\MainWindow.xaml",
+              "RelativeToolTip": "WPF_TEST\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-26T22:26:39.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Kniha.cs",
+              "DocumentMoniker": "C:\\Users\\tomas\\source\\repos\\WPF_TEST\\WPF_TEST\\Knihovna\\Kniha.cs",
+              "RelativeDocumentMoniker": "WPF_TEST\\Knihovna\\Kniha.cs",
+              "ToolTip": "C:\\Users\\tomas\\source\\repos\\WPF_TEST\\WPF_TEST\\Knihovna\\Kniha.cs",
+              "RelativeToolTip": "WPF_TEST\\Knihovna\\Kniha.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T14:49:22.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Registrace.xaml",
+              "DocumentMoniker": "C:\\Users\\tomas\\source\\repos\\WPF_TEST\\WPF_TEST\\Registrace.xaml",
+              "RelativeDocumentMoniker": "WPF_TEST\\Registrace.xaml",
+              "ToolTip": "C:\\Users\\tomas\\source\\repos\\WPF_TEST\\WPF_TEST\\Registrace.xaml",
+              "RelativeToolTip": "WPF_TEST\\Registrace.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-22T14:25:05.208Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "VypisKnih.xaml",
+              "DocumentMoniker": "C:\\Users\\tomas\\source\\repos\\WPF_TEST\\WPF_TEST\\Knihovna\\VypisKnih.xaml",
+              "RelativeDocumentMoniker": "WPF_TEST\\Knihovna\\VypisKnih.xaml",
+              "ToolTip": "C:\\Users\\tomas\\source\\repos\\WPF_TEST\\WPF_TEST\\Knihovna\\VypisKnih.xaml",
+              "RelativeToolTip": "WPF_TEST\\Knihovna\\VypisKnih.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-22T14:14:06.032Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "VypisKnih.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\tomas\\source\\repos\\WPF_TEST\\WPF_TEST\\Knihovna\\VypisKnih.xaml.cs",
+              "RelativeDocumentMoniker": "WPF_TEST\\Knihovna\\VypisKnih.xaml.cs",
+              "ToolTip": "C:\\Users\\tomas\\source\\repos\\WPF_TEST\\WPF_TEST\\Knihovna\\VypisKnih.xaml.cs",
+              "RelativeToolTip": "WPF_TEST\\Knihovna\\VypisKnih.xaml.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAYwCQAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T14:23:41.868Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\tomas\\source\\repos\\WPF_TEST\\WPF_TEST\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WPF_TEST\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\tomas\\source\\repos\\WPF_TEST\\WPF_TEST\\MainWindow.xaml.cs",
+              "RelativeToolTip": "WPF_TEST\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T14:11:01.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Registrace.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\tomas\\source\\repos\\WPF_TEST\\WPF_TEST\\Registrace.xaml.cs",
+              "RelativeDocumentMoniker": "WPF_TEST\\Registrace.xaml.cs",
+              "ToolTip": "C:\\Users\\tomas\\source\\repos\\WPF_TEST\\WPF_TEST\\Registrace.xaml.cs",
+              "RelativeToolTip": "WPF_TEST\\Registrace.xaml.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACIAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-26T19:03:28.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Databaze.cs",
+              "DocumentMoniker": "C:\\Users\\tomas\\source\\repos\\WPF_TEST\\WPF_TEST\\Databaze.cs",
+              "RelativeDocumentMoniker": "WPF_TEST\\Databaze.cs",
+              "ToolTip": "C:\\Users\\tomas\\source\\repos\\WPF_TEST\\WPF_TEST\\Databaze.cs",
+              "RelativeToolTip": "WPF_TEST\\Databaze.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAYwE0AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T22:44:13.987Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Menu.xaml",
+              "DocumentMoniker": "C:\\Users\\tomas\\source\\repos\\WPF_TEST\\WPF_TEST\\Menu.xaml",
+              "RelativeDocumentMoniker": "WPF_TEST\\Menu.xaml",
+              "ToolTip": "C:\\Users\\tomas\\source\\repos\\WPF_TEST\\WPF_TEST\\Menu.xaml",
+              "RelativeToolTip": "WPF_TEST\\Menu.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-22T11:06:51.991Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Menu.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\tomas\\source\\repos\\WPF_TEST\\WPF_TEST\\Menu.xaml.cs",
+              "RelativeDocumentMoniker": "WPF_TEST\\Menu.xaml.cs",
+              "ToolTip": "C:\\Users\\tomas\\source\\repos\\WPF_TEST\\WPF_TEST\\Menu.xaml.cs",
+              "RelativeToolTip": "WPF_TEST\\Menu.xaml.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAnwDEAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T11:06:52.864Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
