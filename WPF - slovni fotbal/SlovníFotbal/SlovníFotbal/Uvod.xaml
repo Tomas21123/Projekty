@@ -1,0 +1,67 @@
+﻿<Page x:Class="SlovníFotbal.Uvod"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SlovníFotbal"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Uvod">
+
+    <!-- Styly -->
+    <Page.Resources>
+        <Style x:Key="style_tlacitka" TargetType="Button">
+            <Setter Property="Background" Value="White" />
+            <Setter Property="Foreground" Value="#FF3A664B"/>
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Height" Value="34" />
+            <Setter Property="Width" Value="132" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center"
+                             VerticalAlignment="Center"
+                             Content="{TemplateBinding Content}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+
+    <!-- Hlavní obsah -->
+    <Grid Background="#FFD6F9DE">
+        <Border HorizontalAlignment="Center" VerticalAlignment="Center"
+            Background="#FFF9FDFB" Width="397" Height="314" CornerRadius="30" Padding="0" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock x:Name="txt_nadpis" HorizontalAlignment="Center" Height="105"
+                       TextWrapping="Wrap" VerticalAlignment="Top"
+                       Width="268" TextAlignment="Center"
+                       FontSize="36" FontWeight="Bold" Foreground="#FF4A6E59"
+                       Margin="0,10,0,0" Grid.RowSpan="2"></TextBlock>
+
+                <StackPanel Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,120,0,0" >
+                    <Button Content="Hra pro jednoho hráče" Width="213" Height="66" FontWeight="Bold"
+                        Margin="0,6" Click="btn_hraSPocitacem" Style="{StaticResource style_tlacitka}"/>
+
+                    <Button Content="Hra pro dva hráče" Width="213" Height="66" FontWeight="Bold"
+                        Margin="0,6" Click="btn_hra" Style="{StaticResource style_tlacitka}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+
+</Page>
