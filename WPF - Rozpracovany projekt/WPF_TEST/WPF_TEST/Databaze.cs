@@ -1,12 +1,13 @@
-﻿using System;
+﻿using MySqlConnector;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
-
-using MySqlConnector;
 using WPF_TEST.Knihovna;
+using WPF_TEST.Sklad;
+using WPF_TEST.User;
 
 namespace WPF_TEST
 {
@@ -103,7 +104,64 @@ namespace WPF_TEST
             return result;
         }
 
+        public async Task<List<Produkt>> NavratVypisSkladuAsync()
+        {
+            var result = new List<Produkt>();
 
+            const string sql = "SELECT id, poziceNaSklade, nazev, mnozstvi FROM sklad;";
+
+            await using var conn = new MySqlConnection(connectionString);
+            await conn.OpenAsync();
+
+            await using var cmd = new MySqlCommand(sql, conn);
+
+            await using var reader = await cmd.ExecuteReaderAsync();
+
+            int ordId = reader.GetOrdinal("id");
+            int ordPozice = reader.GetOrdinal("poziceNaSklade");
+            int ordNazev = reader.GetOrdinal("nazev");
+            int ordMnozstvi = reader.GetOrdinal("mnozstvi");
+
+            while (await reader.ReadAsync())
+            {
+                var produkt = new Produkt
+                {
+                    Id = reader.IsDBNull(ordId) ? 0 : reader.GetInt32(ordId),
+                    PoziceNaSklade = reader.IsDBNull(ordPozice) ? string.Empty : reader.GetString(ordPozice),
+                    Nazev = reader.IsDBNull(ordNazev) ? string.Empty : reader.GetString(ordNazev),
+                    Mnozstvi = reader.IsDBNull(ordMnozstvi) ? 0 : reader.GetInt32(ordMnozstvi)
+                };
+                result.Add(produkt);
+            }
+
+            return result;
+        }
+
+
+        public async Task<UserSessionSet> UserSessionSetData(string email, string heslo)
+        {
+            const string sql = "SELECT id, email FROM uzivatele WHERE email = @Email AND heslo = @Password LIMIT 1;";
+
+            await using var conn = new MySqlConnection(connectionString);
+            await conn.OpenAsync();
+
+            await using var cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@Password", heslo);
+
+            await using var reader = await cmd.ExecuteReaderAsync();
+
+            if (await reader.ReadAsync())
+            {
+                return new UserSessionSet
+                {
+                    Id = reader.GetInt32("id"),
+                    Email = reader.GetString("email")
+                };
+            }
+
+            return null;
+        }
 
 
         public void Dispose()

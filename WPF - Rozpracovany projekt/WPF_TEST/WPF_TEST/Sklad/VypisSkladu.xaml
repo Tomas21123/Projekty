@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="WPF_TEST.Sklad.VypisSkladu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPF_TEST.Sklad"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid Background="White">
+        <DataGrid ItemsSource="{Binding Produkty}" AutoGenerateColumns="False" HorizontalAlignment="Center" Height="Auto" Margin="0,79,0,0" VerticalAlignment="Top">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True" Width="50"/>
+                <DataGridTextColumn Header="Pozice" Binding="{Binding PoziceNaSklade}" Width="*"/>
+                <DataGridTextColumn Header="Název" Binding="{Binding Nazev}" Width="2*"/>
+                <DataGridTextColumn Header="Množství" Binding="{Binding Mnozstvi}" Width="80"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid VerticalAlignment="Top" Height="Auto" Width="auto" HorizontalAlignment="Left">
+            <TextBlock HorizontalAlignment="Left" Height="24" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" FontWeight="Bold" FontSize="16"><Run Text="ID"/><Run Language="cs-cz" Text=" "/><Run Text=":"/></TextBlock>
+            <TextBox x:Name="TextBox_ID" HorizontalAlignment="Left" Height="24" Margin="41,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" Text="---"/>
+            <TextBlock HorizontalAlignment="Left" Height="24" Margin="111,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" FontWeight="Bold" FontSize="16"><Run Language="cs-cz" Text="Název :"/></TextBlock>
+            <TextBox x:Name="TextBox_Nazev" HorizontalAlignment="Left" Height="24" Margin="168,10,0,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="325"/>
+            <TextBlock HorizontalAlignment="Left" Height="24" Margin="10,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontWeight="Bold" FontSize="16"><Run Language="cs-cz" Text="Pozice :"/></TextBlock>
+            <TextBox x:Name="TextBox_Pozice" HorizontalAlignment="Left" Height="24" Margin="75,39,0,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="98"/>
+            <TextBlock HorizontalAlignment="Left" Height="20" Margin="190,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" FontWeight="Bold" FontSize="16"><Run Language="cs-cz" Text="Množství :"/></TextBlock>
+            <TextBox x:Name="TextBox_MnozstviMin" HorizontalAlignment="Left" Height="25" Margin="273,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" Text="MIN"/>
+            <TextBox x:Name="TextBox_MnozstviMax" HorizontalAlignment="Left" Height="25" Margin="395,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" Text="MAX"/>
+            <TextBlock HorizontalAlignment="Left" Height="40" Margin="375,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="20" FontWeight="Bold" FontSize="22"><Run Language="cs-cz" Text="-"/></TextBlock>
+            <Button x:Name="btn_Filtrovat" Content="Filtrovat" HorizontalAlignment="Left" Height="24" Margin="510,10,0,0" VerticalAlignment="Top" Width="280" FontWeight="Bold" FontSize="16" Click="btn_Filtrovat_Click"/>
+            <Button x:Name="btn_ZrusitFiltr" Content="Zrušit filtr" HorizontalAlignment="Left" Height="24" Margin="510,42,0,0" VerticalAlignment="Top" Width="280" FontWeight="Bold" FontSize="16" Click="btn_ZrusitFiltr_Click"/>
+        </Grid>
+    </Grid>
+</UserControl>

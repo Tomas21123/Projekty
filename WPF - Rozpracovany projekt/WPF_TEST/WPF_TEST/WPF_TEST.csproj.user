@@ -17,6 +17,9 @@
     <Compile Update="Registrace.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Sklad\VypisSkladu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Uvod.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -3,32 +3,41 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:WPF_TEST"
+      xmlns:user="clr-namespace:WPF_TEST.User"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Menu">
-    
-    
-    <Grid Background="White">
-        <!-- Definice dvou řádků: horní proužek + obsah -->
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <!-- adaptivní výška pro header -->
-            <RowDefinition />
-            <!-- zbývající prostor pro mřížku -->
-        </Grid.RowDefinitions>
+      Title="Menu" Foreground="Black" Background="White">
 
-        <!-- Horní proužek s klikacím textem -->
-        <Border Background="LightGray" Padding="10" Grid.Row="0">
-        </Border>
+    <DockPanel>
+        <!-- menu nahoře -->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Účet">
+                <!-- Dynamický binding na aktuální email uživatele -->
+                <MenuItem Header="{Binding Email, Source={x:Static user:UserSession.Instance}}"/>
+                <MenuItem Header="_Odhlásit se" Click="OdhlasitSe"/>
+                <Separator/>
+                <MenuItem Header="E_xit" Click="Exit_Click"/>
+            </MenuItem>
 
-        <Button Content="Účet" Grid.Row="0" Click="BtnPrepnutiNaUcet" HorizontalAlignment="Right" Height="41" Margin="712,0,0,0" VerticalAlignment="Center" Width="88" FontSize="16" FontWeight="Bold"/>
+            <MenuItem Header="_Sklad">
+                <MenuItem Header="Výpis skladu" Click="VypisSklad"/>
+                <MenuItem Header="Historie pohybů"/> <!-- Kdo? Kdy? Co? -->
+            </MenuItem>
 
+            <MenuItem Header="_Objednávky">
+                <MenuItem Header="Výpis objednávky"/>
+                <MenuItem Header="Historie objednávek"/>
+            </MenuItem>
+
+            <MenuItem Header="_Reklamace">
+                <MenuItem Header="Výpis reklamací"/>
+                <MenuItem Header="Historie Reklamací"/>
+            </MenuItem>
+        </Menu>
+
+        <!-- Obsah stránky -->
         <Grid Grid.Row="1" Margin="20">
-            <ContentControl x:Name="MainContent" />
+            <ContentControl x:Name="MainContent" Background="White" Foreground="Black" />
         </Grid>
-
-        <Button Content="Výpis knih" HorizontalAlignment="Left" Height="41" VerticalAlignment="Center" Width="102" FontWeight="Bold" FontSize="16" Click="BtnVypisKnih"/>
-
-    </Grid>
+    </DockPanel>
 </Page>

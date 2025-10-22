@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 C:\Users\tomas\source\repos\WPF_TEST\WPF_TEST\App.xaml
-72070231639
+8602396427
 
-14-369147795
-201856749759
-Knihovna\Knihovna.xaml;Knihovna\VypisKnih.xaml;MainWindow.xaml;Menu.xaml;Prihlaseni.xaml;Registrace.xaml;Uvod.xaml;
+18-1931210431
+201-1494293467
+Knihovna\Knihovna.xaml;Knihovna\VypisKnih.xaml;MainWindow.xaml;Menu.xaml;Prihlaseni.xaml;Registrace.xaml;Sklad\VypisSkladu.xaml;Uvod.xaml;
 
-True
+False
 

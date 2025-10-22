@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPF_TEST.Knihovna;
+using WPF_TEST.User;
 
 namespace WPF_TEST
 {
@@ -25,6 +26,22 @@ namespace WPF_TEST
         public Prihlaseni()
         {
             InitializeComponent();
+
+            // načtení posledního emailu
+            if (!string.IsNullOrWhiteSpace(LocalStorage.LastEmail))
+            {
+                textEmail.Text = LocalStorage.LastEmail;
+                emailLabel.Content = string.Empty;
+            }
+
+            // načtení hesla (pokud je uloženo)
+            var stored = LocalStorage.SavedPasswordEncrypted;
+            if (!string.IsNullOrEmpty(stored))
+            {
+                textHeslo.Text = stored;
+                rememberCheckBox.IsChecked = true;
+                hesloLabel.Content = string.Empty;
+            }
         }
 
         // Navigace na stránku Uvod
@@ -86,22 +103,37 @@ namespace WPF_TEST
             {
                 using (Databaze db = new Databaze())
                 {
-                    if (await db.kontrolaLogin(email, heslo))
+                    bool loginOk = await db.kontrolaLogin(email, heslo);
+                    if (!loginOk)
                     {
-                        ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new Menu());
+                        errorTextBox.Text = "Špatný email nebo heslo!";
+                        errorTextBox.Foreground = Brushes.Red;
+                        return;
+                    }
+
+                    var uss = await db.UserSessionSetData(email, heslo);
+                    UserSession.Instance.Set(uss);
+
+                    // uložení do LocalStorage
+                    LocalStorage.LastEmail = uss.Email;
+                    LocalStorage.LastUserId = uss.Id;
+
+                    if (rememberCheckBox.IsChecked == true)
+                    {
+                        LocalStorage.SavedPasswordEncrypted = heslo;
                     }
                     else
                     {
-                        errorTextBox.Text = "Špatný email nebo heslo!";
-                        errorTextBox.Foreground = new SolidColorBrush(Colors.Red);
+                        LocalStorage.SavedPasswordEncrypted = string.Empty;
                     }
+
+                    ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new Menu());
                 }
             }
             catch (Exception ex)
             {
                 errorTextBox.Text = ex.Message;
-                errorTextBox.Foreground = new SolidColorBrush(Colors.Red);
-                return;
+                errorTextBox.Foreground = Brushes.Red;
             }
         }
 

@@ -5,7 +5,7 @@
             <!-- nastav design-size (např. rozměry jak jsi navrhoval v Blend) -->
             <Grid Width="800" Height="450">
                 <TextBlock HorizontalAlignment="Center" Height="73" Margin="0,32,0,0" Text="Registrace" VerticalAlignment="Top" Width="199" FontSize="36" FontWeight="Bold" TextAlignment="Center"/>
-                <Button x:Name="btnUvod" Content="Uvod" HorizontalAlignment="Center" Height="17" Margin="0,360,0,0" VerticalAlignment="Top" Width="116" Click="btnUvod_Click" FontWeight="Bold"/>
+                <Button x:Name="btnUvod" Content="Úvod" HorizontalAlignment="Center" Height="17" Margin="0,360,0,0" VerticalAlignment="Top" Width="116" Click="btnUvod_Click" FontWeight="Bold"/>
                 <Label x:Name="emailLabel" Content="Email" HorizontalAlignment="Center" Height="28" Margin="0,178,0,0" VerticalAlignment="Top" Width="260"/>
                 <Label x:Name="hesloLabel" Content="Heslo" HorizontalAlignment="Center" Height="28" Margin="0,222,0,0" VerticalAlignment="Top" Width="260"/>
                 <TextBox x:Name="textEmail" TextChanged="textEmail_TextChanged" HorizontalAlignment="Center" Height="21" Margin="0,182,0,0" VerticalAlignment="Top" Width="260" Background="{x:Null}"/>

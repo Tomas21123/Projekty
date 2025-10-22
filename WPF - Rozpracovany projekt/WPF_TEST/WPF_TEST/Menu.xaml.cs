@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPF_TEST.Knihovna;
+using WPF_TEST.Sklad;
 
 namespace WPF_TEST
 {
@@ -26,28 +27,19 @@ namespace WPF_TEST
             InitializeComponent();
         }
 
-        private void HeaderText_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        private void OdhlasitSe(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Kliknul jsi na horní text!");
-            // Tady můžeš přidat jinou logiku podle potřeby
+            ((MainWindow)Application.Current.MainWindow).MainFrame.Navigate(new Uvod());
         }
 
-        private void CellButton_Click(object sender, RoutedEventArgs e)
+        private void Exit_Click(object sender, RoutedEventArgs e)
         {
-            if (sender is Button btn)
-            {
-                MessageBox.Show($"Kliknuto na tlačítko {btn.Content}");
-            }
+            Application.Current.Shutdown();
         }
 
-        private void BtnPrepnutiNaUcet(object sender, RoutedEventArgs e)
+        private void VypisSklad(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void BtnVypisKnih(object sender, RoutedEventArgs e)
-        {
-            MainContent.Content = new VypisKnih();
+            MainContent.Content = new VypisSkladu();
         }
     }
 }

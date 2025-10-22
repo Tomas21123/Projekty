@@ -16,7 +16,7 @@
                 <TextBlock HorizontalAlignment="Center" Height="73" Margin="0,32,0,0"
                    Text="Přihlášení" VerticalAlignment="Top" Width="199"
                    FontSize="36" FontWeight="Bold" TextAlignment="Center"/>
-                <Button x:Name="btnUvod" Content="Uvod" HorizontalAlignment="Center"
+                <Button x:Name="btnUvod" Content="Úvod" HorizontalAlignment="Center"
                 Height="17" Margin="0,360,0,0" VerticalAlignment="Top"
                 Width="116" Click="btnUvod_Click" FontWeight="Bold"/>
                 <Label x:Name="emailLabel" Content="Email" HorizontalAlignment="Center" Height="28" Margin="0,178,0,0" VerticalAlignment="Top" Width="260"/>
@@ -29,6 +29,7 @@
                 Height="20" Margin="0,284,0,0" VerticalAlignment="Top" Width="260"
                 Click="btnPrihlasit_Click"/>
                 <TextBlock x:Name="errorTextBox" HorizontalAlignment="Center" Margin="0,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153"/>
+                <CheckBox x:Name="rememberCheckBox" Content="Pamatovat si údaje" HorizontalAlignment="Center" Height="17" Margin="0,262,0,0" VerticalAlignment="Top" Width="260"/>
             </Grid>
         </Viewbox>
     </Grid>
