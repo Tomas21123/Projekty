@@ -1,0 +1,15 @@
+﻿<Window x:Class="AudioPrehravac.InputDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Vlož název playlistu" Height="150" Width="300" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="TextBoxInput" Grid.Row="0" FontSize="16"/>
+
+        <Button Grid.Row="1" Content="OK" Width="80" Height="30" HorizontalAlignment="Right" Margin="0,10,0,0" Click="OkButton_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,370 @@
+﻿<Window x:Class="AudioPrehravac.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AudioPrehravac"
+        mc:Ignorable="d"
+        Title="Audio přehrávač" Height="450" Width="800"
+        Background="#FF071220">
+
+    <Window.Resources>
+        <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Window.Resources>
+
+    <Viewbox Stretch="Uniform">
+        <Grid Background="#FF071220">
+
+            <Grid HorizontalAlignment="Center" Height="356" VerticalAlignment="Center" Width="800" Background="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="6"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="6"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Vršek -->
+
+
+                <Canvas Grid.Row="0" Grid.Column="1" Background="Transparent"/>
+                <Canvas Grid.Row="0" Grid.Column="3" Background="Transparent"/>
+
+
+                <!-- Levej sloupec (playlisty) -->
+                <Grid Grid.Row="0" Grid.Column="0" Background="#FF0E1A2B">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Button Grid.Row="0" 
+            Content="Vytvořit playlist" 
+            Width="225" Height="30" 
+            HorizontalAlignment="Left" 
+            Click="Click_VytvořitPlaylist"/>
+
+                    <!-- ✅ ScrollViewer pro posouvání kolečkem -->
+                    <ScrollViewer Grid.Row="1"
+                  VerticalScrollBarVisibility="Hidden"
+                  HorizontalScrollBarVisibility="Disabled"
+                  PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
+                        <DataGrid x:Name="PlaylistsDataGrid"
+                  AutoGenerateColumns="False"
+                  HeadersVisibility="None"
+                  CanUserAddRows="False"
+                  Background="Transparent"
+                  ScrollViewer.CanContentScroll="False"
+                  ItemsSource="{Binding NactiPlaylisty.Playlists}">
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Width="*">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <!-- Název playlistu -->
+                                                <Button Grid.Column="0"
+                                        Content="{Binding Name}" 
+                                        Click="Click_SetAktualPlaylist" 
+                                        HorizontalAlignment="Left" 
+                                        Background="Transparent" 
+                                        BorderThickness="0"/>
+
+                                                <!-- Menu tlačítko -->
+                                                <Button Grid.Column="1" 
+                                        Content="..." 
+                                        Width="30" Height="20"
+                                        Background="Transparent" 
+                                        BorderThickness="0" 
+                                        Click="SongOptions_Click"
+                                        HorizontalAlignment="Right">
+                                                    <Button.ContextMenu>
+                                                        <ContextMenu>
+                                                            <MenuItem Header="Smazat playlist" 
+                                                      Click="Click_DeletePlaylist"/>
+                                                        </ContextMenu>
+                                                    </Button.ContextMenu>
+                                                </Button>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </ScrollViewer>
+                </Grid>
+
+
+
+
+                <!-- Střední sloupec (audio visualiser) -->
+                <Canvas x:Name="VisualizerCanvas" Grid.Row="0" Grid.Column="2" Background="#FF0E1A2B"/>
+
+
+
+
+                <!-- Pravej sloupec (písničky) -->
+                <Grid Grid.Row="0" Grid.Column="4" Background="#FF0E1A2B">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Button Grid.Row="0" 
+            Content="Odejít z playlistu" 
+            Width="225" Height="30"
+            Visibility="{Binding IsPlaylist, Converter={StaticResource BoolToVisibilityConverter}}"
+            HorizontalAlignment="Left" 
+            Click="Click_ZobrazitVsechnyPisnicky"/>
+
+                    <Canvas Grid.Row="1" Background="Transparent" Height="6"/>
+
+                    <!-- ✅ ScrollViewer pro kolečko, ale bez lišt -->
+                    <ScrollViewer Grid.Row="2"
+                  VerticalScrollBarVisibility="Hidden"
+                  HorizontalScrollBarVisibility="Disabled"
+                  PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
+                        <DataGrid x:Name="SongsDataGrid"
+                  AutoGenerateColumns="False"
+                  HeadersVisibility="None"
+                  CanUserAddRows="False"
+                  ScrollViewer.CanContentScroll="False"
+                  Background="Transparent"
+                  ItemsSource="{Binding NacteniSongu.Songs}">
+                            <DataGrid.Columns>
+                                <!-- Název písničky -->
+                                <DataGridTemplateColumn Width="*">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Content="{Binding FileName}" 
+                                    HorizontalAlignment="Left"
+                                    Background="Transparent"
+                                    Click="Click_NastavSongu"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <!-- Menu tlačítko -->
+                                <DataGridTemplateColumn Width="Auto">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Content="..." Width="30" Height="20" 
+                                    Background="Transparent" 
+                                    Click="Click_PridatDoPlaylistuHelp">
+                                                <Button.ContextMenu>
+                                                    <ContextMenu>
+                                                        <MenuItem Header="Přidat do playlistu">
+                                                            <MenuItem.ItemsSource>
+                                                                <Binding Path="DataContext.NactiPlaylisty.Playlists" 
+                                                         RelativeSource="{RelativeSource AncestorType=Window}"/>
+                                                            </MenuItem.ItemsSource>
+                                                            <MenuItem.ItemContainerStyle>
+                                                                <Style TargetType="MenuItem">
+                                                                    <Setter Property="Header" Value="{Binding Name}" />
+                                                                    <Setter Property="Tag" 
+                                                            Value="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=DataContext}"/>
+                                                                    <EventSetter Event="Click" Handler="Click_AddSongToSpecificPlaylist"/>
+                                                                </Style>
+                                                            </MenuItem.ItemContainerStyle>
+                                                        </MenuItem>
+                                                    </ContextMenu>
+                                                </Button.ContextMenu>
+                                            </Button>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </ScrollViewer>
+                </Grid>
+
+
+
+
+
+                <!-- Spodek -->
+
+                <Canvas Grid.Row="1" Background="#FF0E1A2B" Grid.ColumnSpan="3" Margin="210,7,0,0" Grid.RowSpan="2" HorizontalAlignment="Left" Width="36"/>
+                <Canvas Grid.Row="1" Grid.Column="2" Background="#FF0E1A2B" Grid.ColumnSpan="3" Margin="316,7,202,0" Grid.RowSpan="2"/>
+
+                <StackPanel Grid.Row="2" Grid.Column="0" Background="#FF0E1A2B" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Height="71" Width="225">
+                    <Button Width="50" Height="50" Margin="10,0"
+                    Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Click="Click_Rewind">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <Ellipse x:Name="hoverEllipse" Fill="LightGray" Opacity="0" Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
+
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="hoverEllipse" Property="Opacity" Value="0.5"/>
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter TargetName="hoverEllipse" Property="Opacity" Value="0.7"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                        <Image Source="/IMG/rewind.png" Stretch="Uniform" Width="40" Height="40"/>
+                    </Button>
+
+
+
+                    <Button Width="50" Height="50" Margin="10,0"
+                    Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Click="Click_PlayStop">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <Ellipse x:Name="hoverEllipse" Fill="LightGray" Opacity="0" Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
+
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="hoverEllipse" Property="Opacity" Value="0.5"/>
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter TargetName="hoverEllipse" Property="Opacity" Value="0.7"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                        <Image Source="/IMG/play-pause.png" Stretch="Uniform" Width="40" Height="40"/>
+                    </Button>
+
+
+
+                    <Button Width="50" Height="50" Margin="10,0"
+                    Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Click="Click_Forward">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <Ellipse x:Name="hoverEllipse" Fill="LightGray" Opacity="0" Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
+
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="hoverEllipse" Property="Opacity" Value="0.5"/>
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter TargetName="hoverEllipse" Property="Opacity" Value="0.7"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                        <Image Source="/IMG/forward.png" Stretch="Uniform" Width="40" Height="40"/>
+                    </Button>
+                </StackPanel>
+
+
+
+                <Grid Grid.Row="2" Grid.Column="2" Background="#FF0E1A2B" HorizontalAlignment="Center" VerticalAlignment="Center" Height="71" Width="340">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Viewbox Grid.Column="0" Width="338" Height="Auto" Margin="2,-7,0,28" Grid.RowSpan="2">
+                        <TextBlock x:Name="Label_NazevPisnicky"
+                                   Text="{Binding AktualniPisnicka}"
+                                   FontSize="24"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   TextWrapping="Wrap"
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"/>
+                    </Viewbox>
+                    
+                    <Slider x:Name="Slider_SongTime" Margin="-1,10,1,-10" Grid.Row="1" ValueChanged="Slider_SongTime_ValueChanged"/>
+                </Grid>
+
+
+
+                <StackPanel Grid.Row="1" Grid.Column="4" Background="#FF0E1A2B" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Height="100" Width="225" Margin="0,7,0,0" Grid.RowSpan="2">
+
+                    <!-- Horizontální panel s tlačítky -->
+
+                    <!-- Slider pod tlačítky -->
+                    <!-- Horizontální panel s tlačítky -->
+                    <StackPanel Orientation="Horizontal">
+                        <Button Width="40" Height="40" Margin="0,0,10,0" Background="Transparent" BorderBrush="Transparent" Click="Click_Opakovani">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Ellipse x:Name="hoverEllipse" Fill="LightGray" Opacity="0" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="hoverEllipse" Property="Opacity" Value="0.5"/>
+                                        </Trigger>
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter TargetName="hoverEllipse" Property="Opacity" Value="0.7"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                            
+                            <Image x:Name="IMG_RezimPrehravani" Source="/IMG/circle.png"  Stretch="Uniform" Width="30" Height="30"/>
+                        </Button>
+
+                        <Button Width="40" Height="40" Background="Transparent" BorderBrush="Transparent" Click="Click_NahodnyVyber">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Ellipse x:Name="hoverEllipse" Fill="LightGray" Opacity="0" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="hoverEllipse" Property="Opacity" Value="0.5"/>
+                                        </Trigger>
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter TargetName="hoverEllipse" Property="Opacity" Value="0.7"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                            
+                            <Image x:Name="IMG_Prehravani" Source="/IMG/arrow-right.png"  Stretch="Uniform" Width="40" Height="30"/>
+                        </Button>
+                    </StackPanel>
+
+                    <!-- Slider pod tlačítky -->
+                    <Slider x:Name="Slider_Hlasitost" Minimum="0" Maximum="100" Width="224" Value="10" TickFrequency="1" IsSnapToTickEnabled="True" ValueChanged="Slider_ValueChanged" Height="18"/>
+                </StackPanel>
+
+
+
+            </Grid>
+
+
+        </Grid>
+    </Viewbox>
+
+</Window>
