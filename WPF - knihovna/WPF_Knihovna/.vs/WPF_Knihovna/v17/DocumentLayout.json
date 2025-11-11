@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\tomas\\source\\repos\\WPF_Knihovna\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{32D674B7-9642-47C5-A253-B3CF6854D231}|WPF_Knihovna\\WPF_Knihovna.csproj|c:\\users\\tomas\\source\\repos\\wpf_knihovna\\wpf_knihovna\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{32D674B7-9642-47C5-A253-B3CF6854D231}|WPF_Knihovna\\WPF_Knihovna.csproj|solutionrelative:wpf_knihovna\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\tomas\\source\\repos\\WPF_Knihovna\\WPF_Knihovna\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "WPF_Knihovna\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\tomas\\source\\repos\\WPF_Knihovna\\WPF_Knihovna\\MainWindow.xaml",
+              "RelativeToolTip": "WPF_Knihovna\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-08T13:44:02.61Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
